@@ -1,4 +1,4 @@
-package com.ft.dropwizard.testingutils;
+package com.ft.dropwizard.testingutils.matcher;
 
 import com.yammer.metrics.core.HealthCheck;
 import org.hamcrest.Description;
