@@ -1,4 +1,4 @@
-package com.ft.dropwizard.testingutils.matcher;
+package com.ft.dropwizard.matcher;
 
 import org.hamcrest.Description;
 import org.hamcrest.Factory;

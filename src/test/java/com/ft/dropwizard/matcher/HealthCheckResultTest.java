@@ -1,5 +1,6 @@
-package com.ft.dropwizard.testingutils.matcher;
+package com.ft.dropwizard.matcher;
 
+import com.ft.dropwizard.matcher.HealthCheckResult;
 import com.yammer.metrics.core.HealthCheck;
 import org.junit.Test;
 

@@ -1,5 +1,6 @@
-package com.ft.dropwizard.testingutils.matcher;
+package com.ft.dropwizard.matcher;
 
+import com.ft.dropwizard.matcher.Json;
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

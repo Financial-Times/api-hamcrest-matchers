@@ -11,8 +11,8 @@
     </parent>
 
     <groupId>com.ft.dropwizard</groupId>
-    <artifactId>testing-utils</artifactId>
-    <version>0.2.0</version>
+    <artifactId>api-hamcrest-matchers</artifactId>
+    <version>0.3.0</version>
 
     <properties>
         <dropwizard-core.version>0.6.2</dropwizard-core.version>
@@ -29,8 +29,27 @@
         </dependency>
         <dependency>
             <groupId>org.openrdf.sesame</groupId>
-            <artifactId>sesame-rio-ntriples</artifactId>
+            <artifactId>sesame-rio-api</artifactId>
             <version>${openrdf.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jsonld-java</groupId>
+            <artifactId>jsonld-java-sesame</artifactId>
+            <version>0.2</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>jcl-over-slf4j</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>org.slf4j</groupId>
+                    <artifactId>slf4j-log4j12</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>log4j</groupId>
+                    <artifactId>log4j</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
