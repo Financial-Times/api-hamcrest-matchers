@@ -20,10 +20,20 @@ This library provides Hamcrest Matchers useful when testing various APIs.
 ## Dropwizard health check
 
 > import static com.ft.dropwizard.matcher.HealthCheckResult.healthy;
-
-> import static com.ft.dropwizard.matcher.HealthCheckResult.unhealthy;
 >
+> import static com.ft.dropwizard.matcher.HealthCheckResult.unhealthy;
 >
 > assertThat(healthCheck.check(), is(healthy()));
 >
 > assertThat(healthCheck.check(), is(unhealthy("Unexpected status")));
+
+
+## Server response error
+
+> import static com.ft.dropwizard.matcher.ServerResponseWithCode.errorCode;
+>
+> @Rule
+>
+> public ExpectedException expectedException = ExpectedException.none();
+>
+> expectedException.expect(errorCode(503));
