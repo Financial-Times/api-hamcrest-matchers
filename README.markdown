@@ -17,13 +17,6 @@ This library provides Hamcrest Matchers useful when testing various APIs.
 > assertThat(jsonLd, is(validJsonLd()));
 
 
-## JSON-LD
-
-> import static com.ft.dropwizard.matcher.JsonLd.validJsonLd;
->
-> assertThat(jsonLd, is(validJsonLd()));
-
-
 ## Dropwizard health check
 
 > import static com.ft.dropwizard.matcher.HealthCheckResult.healthy;
