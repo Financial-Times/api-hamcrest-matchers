@@ -6,15 +6,14 @@ import javax.ws.rs.core.MultivaluedMap;
 
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
-import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
-public class ResponseHeaders extends TypeSafeMatcher<MultivaluedMap<String, Object>> {
+public class ResponseHeaders extends TypeSafeMatcher<MultivaluedMap<String, String>> {
 
 	private String headerName;
-	private Object expectedValue;
+	private String expectedValue;
 
-	public ResponseHeaders(String headerName, Object expectedValue) {
+	public ResponseHeaders(String headerName, String expectedValue) {
 		this.headerName = headerName;
 		this.expectedValue = expectedValue;
 	}
@@ -25,25 +24,29 @@ public class ResponseHeaders extends TypeSafeMatcher<MultivaluedMap<String, Obje
 	}
 
 	@Override
-	protected boolean matchesSafely(MultivaluedMap<String, Object> headers) {
+	protected boolean matchesSafely(MultivaluedMap<String, String> headers) {
 		// TODO - what if either are null?
 		if (headers.containsKey(headerName)) {
 			if (expectedValue == null) {
 				return true;
 			}
-			return expectedValue.equals(headers.get(headerName));
+			List<String> values = headers.get(headerName);
+			if (values != null) {
+				return values.contains(expectedValue);
+			}
+			return false;
 		} else {
 			return false;
 		}
 	}
 	
-	public ResponseHeaders withValue(Object expectedValue) {
+	public ResponseHeaders withValue(String expectedValue) {
 		this.expectedValue = expectedValue;
 		return this;
 	}
 	
 	@Factory
-	public static ResponseHeaders containsHeaderWithValue(String headerName, Object headerValue) {
+	public static ResponseHeaders containsHeaderWithValue(String headerName, String headerValue) {
 		return new ResponseHeaders(headerName, headerValue);
 	}
 	

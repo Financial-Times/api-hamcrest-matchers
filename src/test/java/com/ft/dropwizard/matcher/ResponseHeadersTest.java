@@ -4,16 +4,13 @@ import static com.ft.dropwizard.matcher.ResponseHeaders.containsHeader;
 import static org.hamcrest.CoreMatchers.not;
 import static org.hamcrest.MatcherAssert.assertThat;
 
-import java.util.List;
-
 import javax.ws.rs.core.MultivaluedMap;
 
 import org.apache.http.protocol.HTTP;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.google.common.collect.ImmutableList;
-import com.sun.jersey.core.header.OutBoundHeaders;
+import com.sun.jersey.core.header.InBoundHeaders;
 
 
 
@@ -21,12 +18,11 @@ public class ResponseHeadersTest {
 	
 	
 	private static final String CONTENT_TYPE_VALUE = "application/json; charset=UTF-8; qs=1";
-	private static final List<String> EXPECTED_VALUE = ImmutableList.of(CONTENT_TYPE_VALUE);
-	private static MultivaluedMap<String, Object> headers;
+	private static MultivaluedMap<String, String> headers;
 	
 	@Before
 	public void setup() {
-		headers = new OutBoundHeaders();
+		headers = new InBoundHeaders();
 		headers.add(HTTP.CONTENT_TYPE, CONTENT_TYPE_VALUE);
 	}
 	
@@ -37,7 +33,7 @@ public class ResponseHeadersTest {
 	
 	@Test
 	public void headerExistsAndValueMatches() {
-		assertThat(headers, containsHeader(HTTP.CONTENT_TYPE).withValue(EXPECTED_VALUE));
+		assertThat(headers, containsHeader(HTTP.CONTENT_TYPE).withValue(CONTENT_TYPE_VALUE));
 	}
 	
 	@Test
