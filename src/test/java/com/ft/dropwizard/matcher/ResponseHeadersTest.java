@@ -17,7 +17,7 @@ import com.sun.jersey.core.header.OutBoundHeaders;
 
 
 
-public class ResponseHeaderTest {
+public class ResponseHeadersTest {
 	
 	
 	private static final String CONTENT_TYPE_VALUE = "application/json; charset=UTF-8; qs=1";
