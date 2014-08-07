@@ -12,7 +12,7 @@
 
     <groupId>com.ft.dropwizard</groupId>
     <artifactId>api-hamcrest-matchers</artifactId>
-    <version>0.6.1</version>
+    <version>0.6.2</version>
 
     <properties>
         <dropwizard-core.version>0.6.2</dropwizard-core.version>
