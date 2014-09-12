@@ -1,10 +1,11 @@
 package com.ft.dropwizard.matcher;
 
-import com.yammer.metrics.core.HealthCheck;
 import org.hamcrest.Description;
 import org.hamcrest.Factory;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
+
+import com.codahale.metrics.health.HealthCheck;
 
 public class HealthCheckResult extends TypeSafeMatcher<HealthCheck.Result> {
 

@@ -1,7 +1,7 @@
 package com.ft.dropwizard.matcher;
 
-import com.ft.dropwizard.matcher.HealthCheckResult;
-import com.yammer.metrics.core.HealthCheck;
+import com.codahale.metrics.health.HealthCheck;
+
 import org.junit.Test;
 
 import static org.hamcrest.CoreMatchers.is;

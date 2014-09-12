@@ -12,10 +12,10 @@
 
     <groupId>com.ft.dropwizard</groupId>
     <artifactId>api-hamcrest-matchers</artifactId>
-    <version>0.6.2</version>
+    <version>0.7.0</version>
 
     <properties>
-        <dropwizard-core.version>0.6.2</dropwizard-core.version>
+        <dropwizard-core.version>0.7.0</dropwizard-core.version>
         <junit.version>4.11</junit.version>
         <json.version>20090211</json.version>
         <openrdf.version>2.7.8</openrdf.version>
@@ -75,7 +75,7 @@
             <version>${junit.version}</version>
         </dependency>
         <dependency>
-            <groupId>com.yammer.dropwizard</groupId>
+            <groupId>io.dropwizard</groupId>
             <artifactId>dropwizard-core</artifactId>
             <version>${dropwizard-core.version}</version>
         </dependency>
