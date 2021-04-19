@@ -15,7 +15,7 @@
     <version>0.7.0</version>
 
     <properties>
-        <dropwizard-core.version>0.7.0</dropwizard-core.version>
+        <dropwizard-core.version>0.9.3</dropwizard-core.version>
         <junit.version>4.11</junit.version>
         <json.version>20090211</json.version>
         <openrdf.version>2.7.8</openrdf.version>
